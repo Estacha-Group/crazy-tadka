@@ -61,7 +61,17 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <ul className="space-y-4 text-sm text-gray-400 font-sans">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-chili shrink-0" />
-                <span>KIIT Road, Patia,<br/>Bhubaneswar, Odisha 751024</span>
+                <a 
+                  href="https://maps.google.com/?q=Plot+No.+13/1423+%26+13/1424,+Mouza-Nuagaon,+Po-Malipada+and+Ps-Chandka,+(Near+IIIT,+Madhupur+and+Paikarapur+Road)+Bhubaneswar-751003" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-saffron transition-colors"
+                >
+                  Plot No. 13/1423 & 13/1424,<br/>
+                  Mouza-Nuagaon, Po-Malipada and Ps-Chandka,<br/>
+                  (Near IIIT, Madhupur and Paikarapur Road)<br/>
+                  Bhubaneswar-751003
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-chili shrink-0" />
@@ -71,8 +81,8 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-chili shrink-0" />
-                <a href="mailto:hello@crazytadka.in" className="hover:text-saffron transition-colors">
-                  hello@crazytadka.in
+                <a href="mailto:hello@crazytadka.com" className="hover:text-saffron transition-colors">
+                  hello@crazytadka.com
                 </a>
               </li>
             </ul>

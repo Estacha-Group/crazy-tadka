@@ -30,11 +30,18 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-white font-display font-bold text-lg mb-2">Location</h3>
-                  <p className="text-gray-300">
-                    KIIT Road, Patia<br />
-                    Bhubaneswar, Odisha 751024<br />
+                  <a 
+                    href="https://maps.google.com/?q=Plot+No.+13/1423+%26+13/1424,+Mouza-Nuagaon,+Po-Malipada+and+Ps-Chandka,+(Near+IIIT,+Madhupur+and+Paikarapur+Road)+Bhubaneswar-751003"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300 hover:text-saffron transition-colors"
+                  >
+                    Plot No. 13/1423 & 13/1424,<br />
+                    Mouza-Nuagaon, Po-Malipada and Ps-Chandka,<br />
+                    (Near IIIT, Madhupur and Paikarapur Road)<br />
+                    Bhubaneswar-751003<br />
                     India
-                  </p>
+                  </a>
                 </div>
               </div>
             </div>
@@ -63,8 +70,8 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <h3 className="text-white font-display font-bold text-lg mb-2">Email</h3>
-                  <a href="mailto:hello@crazytadka.in" className="text-gray-300 hover:text-saffron transition-colors">
-                    hello@crazytadka.in
+                  <a href="mailto:hello@crazytadka.com" className="text-gray-300 hover:text-saffron transition-colors">
+                    hello@crazytadka.com
                   </a>
                 </div>
               </div>
@@ -90,23 +97,30 @@ const ContactPage: React.FC = () => {
 
           {/* Map & Social */}
           <div className="space-y-6">
-            {/* Map Placeholder */}
-            <div className="glass-panel rounded-2xl overflow-hidden h-[300px] md:h-[400px] relative">
-              <img 
-                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1200&auto=format&fit=crop"
-                alt="Map location"
-                className="w-full h-full object-cover opacity-60"
+            {/* Google Map */}
+            <div className="glass-panel rounded-2xl overflow-hidden h-[300px] md:h-[450px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.9869876543!2d85.7790!3d20.2870!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDE3JzEzLjIiTiA4NcKwNDYnNDQuNCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="CRAZY TADKA Location"
+                className="w-full h-full"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-void/50">
-                <a 
-                  href="https://maps.google.com/?q=KIIT+Road+Patia+Bhubaneswar+Odisha"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 bg-saffron text-white font-bold rounded-full hover:bg-orange-600 transition-colors"
-                >
-                  Open in Google Maps
-                </a>
-              </div>
+            </div>
+            <div className="text-center mt-4">
+              <a 
+                href="https://maps.google.com/?q=Plot+No.+13/1423+%26+13/1424,+Mouza-Nuagaon,+Po-Malipada+and+Ps-Chandka,+(Near+IIIT,+Madhupur+and+Paikarapur+Road)+Bhubaneswar-751003"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-saffron hover:text-turmeric transition-colors text-sm font-medium"
+              >
+                <MapPin className="w-4 h-4" />
+                Open in Google Maps
+              </a>
             </div>
 
             {/* Social Media */}

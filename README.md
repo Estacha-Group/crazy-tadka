@@ -107,8 +107,8 @@ const launchDate = new Date('December 15, 2025 00:00:00').getTime();
 ## 📞 Contact
 
 - **Phone**: +91 9040485999
-- **Email**: hello@crazytadka.in
-- **Location**: KIIT Road, Patia, Bhubaneswar, Odisha 751024
+- **Email**: hello@crazytadka.com
+- **Location**: Plot No. 13/1423 & 13/1424, Mouza-Nuagaon, Po-Malipada and Ps-Chandka, (Near IIIT, Madhupur and Paikarapur Road) Bhubaneswar-751003
 
 ## 📄 License
 

@@ -130,9 +130,19 @@ const LaunchingSoon: React.FC = () => {
           </div>
 
           {/* Location Preview */}
-          <div className="mb-8 text-gray-400 text-sm flex items-center justify-center gap-2">
-            <MapPin className="w-4 h-4 text-chili" />
-            <span>KIIT Road, Patia, Bhubaneswar, Odisha 751024</span>
+          <div className="mb-8 text-gray-400 text-sm">
+            <a 
+              href="https://maps.google.com/?q=Plot+No.+13/1423+%26+13/1424,+Mouza-Nuagaon,+Po-Malipada+and+Ps-Chandka,+(Near+IIIT,+Madhupur+and+Paikarapur+Road)+Bhubaneswar-751003"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 hover:text-saffron transition-colors"
+            >
+              <MapPin className="w-4 h-4 text-chili" />
+              <span>
+                Plot No. 13/1423 & 13/1424, Mouza-Nuagaon, Po-Malipada and Ps-Chandka,<br/>
+                (Near IIIT, Madhupur and Paikarapur Road) Bhubaneswar-751003
+              </span>
+            </a>
           </div>
 
           {/* Social Links */}
