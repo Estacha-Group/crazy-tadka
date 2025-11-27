@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Menu from './components/Menu';
@@ -8,13 +8,29 @@ import FloatingParticles from './components/FloatingParticles';
 import LaunchingSoon from './components/LaunchingSoon';
 import { MenuItem, CartItem } from './types';
 
-// Set this to true to show the full website, false to show launching soon page
-const IS_LAUNCHED = false;
+type Page = 'home' | 'launching-soon';
 
 const App: React.FC = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState<Page>('home');
+
+  // Simple hash-based routing
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '') || 'home';
+      if (hash === 'launching-soon') {
+        setCurrentPage('launching-soon');
+      } else {
+        setCurrentPage('home');
+      }
+    };
+
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   const handleAddToCart = (item: MenuItem) => {
     setCartItems(prev => {
@@ -42,12 +58,12 @@ const App: React.FC = () => {
 
   const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
-  // Show launching soon page if not launched yet
-  if (!IS_LAUNCHED) {
+  // Show launching soon page
+  if (currentPage === 'launching-soon') {
     return <LaunchingSoon />;
   }
 
-  // Full website
+  // Full website (home)
   return (
     <div className="relative min-h-screen bg-void text-white selection:bg-neon-red selection:text-white">
       <FloatingParticles />
