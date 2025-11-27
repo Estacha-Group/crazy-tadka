@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Menu from './components/Menu';
 import Footer from './components/Footer';
 import CartDrawer from './components/CartDrawer';
 import FloatingParticles from './components/FloatingParticles';
-import LaunchingSoon from './components/LaunchingSoon';
+import HomePage from './components/pages/HomePage';
+import MenuPage from './components/pages/MenuPage';
+import AboutPage from './components/pages/AboutPage';
+import ContactPage from './components/pages/ContactPage';
+import LaunchPage from './components/pages/LaunchPage';
 import { MenuItem, CartItem } from './types';
 
-type Page = 'home' | 'launching-soon';
+type Page = 'home' | 'menu' | 'about' | 'contact' | 'launch';
 
 const App: React.FC = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -16,12 +18,14 @@ const App: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState<Page>('home');
 
-  // Simple hash-based routing
+  // Hash-based routing
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '') || 'home';
-      if (hash === 'launching-soon') {
-        setCurrentPage('launching-soon');
+      const validPages: Page[] = ['home', 'menu', 'about', 'contact', 'launch'];
+      if (validPages.includes(hash as Page)) {
+        setCurrentPage(hash as Page);
+        window.scrollTo(0, 0);
       } else {
         setCurrentPage('home');
       }
@@ -31,6 +35,11 @@ const App: React.FC = () => {
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
+
+  const navigateTo = (page: string) => {
+    window.location.hash = page;
+    setIsMobileMenuOpen(false);
+  };
 
   const handleAddToCart = (item: MenuItem) => {
     setCartItems(prev => {
@@ -58,12 +67,22 @@ const App: React.FC = () => {
 
   const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
-  // Show launching soon page
-  if (currentPage === 'launching-soon') {
-    return <LaunchingSoon />;
-  }
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'menu':
+        return <MenuPage onAddToCart={handleAddToCart} />;
+      case 'about':
+        return <AboutPage />;
+      case 'contact':
+        return <ContactPage />;
+      case 'launch':
+        return <LaunchPage onNavigate={navigateTo} />;
+      case 'home':
+      default:
+        return <HomePage onNavigate={navigateTo} />;
+    }
+  };
 
-  // Full website (home)
   return (
     <div className="relative min-h-screen bg-void text-white selection:bg-neon-red selection:text-white">
       <FloatingParticles />
@@ -72,14 +91,16 @@ const App: React.FC = () => {
         cartCount={cartCount} 
         onCartClick={() => setIsCartOpen(true)}
         onMenuClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        isMobileMenuOpen={isMobileMenuOpen}
+        currentPage={currentPage}
+        onNavigate={navigateTo}
       />
 
       <main>
-        <Hero />
-        <Menu onAddToCart={handleAddToCart} />
+        {renderPage()}
       </main>
 
-      <Footer />
+      <Footer onNavigate={navigateTo} />
 
       <CartDrawer 
         isOpen={isCartOpen}

@@ -99,15 +99,23 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #FF7722;
       }
+      /* Enhanced Glassmorphism */
       .glass-panel {
-        background: rgba(20, 20, 20, 0.4);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        background: rgba(20, 20, 20, 0.6);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 
+          0 8px 32px rgba(0, 0, 0, 0.6),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
       }
       .text-glow {
-        text-shadow: 0 0 20px rgba(255, 119, 34, 0.5);
+        text-shadow: 0 0 30px rgba(255, 119, 34, 0.4);
+      }
+      /* Prevent word breaks */
+      .no-break {
+        word-break: keep-all;
+        white-space: nowrap;
       }
     </style>
   </head>
