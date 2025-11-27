@@ -290,9 +290,16 @@ body::before {
 }
 
 /* Coming Soon Badge */
+.coming-soon-badge-wrapper {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .coming-soon-badge {
     display: inline-block;
-    margin: 1.5rem auto;
+    margin: 1.5rem 0;
     padding: 0.8rem 2rem;
     background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
     border-radius: 50px;
