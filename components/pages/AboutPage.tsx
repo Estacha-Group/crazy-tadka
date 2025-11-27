@@ -167,20 +167,8 @@ const AboutPage: React.FC = () => {
                 Om Swarup Bindhani
               </h3>
               <p className="text-saffron font-semibold mb-4">Founder & Visionary</p>
-              <p className="text-turmeric text-sm font-medium mb-4">
+              <p className="text-turmeric text-sm font-medium mb-6">
                 Serial & Social Entrepreneur | Agro-Tourism Innovator | Nation-Builder
-              </p>
-              <p className="text-gray-300 leading-relaxed mb-4">
-                Om Swarup Bindhani is a visionary, purpose-driven entrepreneur dedicated to creating 
-                inclusive, scalable ventures rooted in regional empowerment and sustainable development. 
-                With a decade of experience, he strategically deploys business as a tool for societal 
-                transformation, successfully positioning Odisha as a rising hub for innovation.
-              </p>
-              <p className="text-gray-300 leading-relaxed mb-6">
-                His work spans key sectors including agriculture, wellness, startup incubation, and social 
-                impact. As the Director of Estacha Innovation Incubator and Founder of O-Launchpad, QFarm, 
-                and Best of Odisha, he brings his entrepreneurial spirit to CRAZY TADKA, combining his passion 
-                for authentic cuisine with sustainable business practices.
               </p>
               
               {/* Social Links */}
