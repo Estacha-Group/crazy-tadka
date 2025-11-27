@@ -157,11 +157,13 @@ const LaunchPage: React.FC<LaunchPageProps> = ({ onNavigate }) => {
               <MapPin className="w-4 h-4" /> Find Us
             </h3>
             <p className="text-gray-300 mb-3">
-              KIIT Road, Patia<br />
-              Bhubaneswar, Odisha 751024
+              Plot No. 13/1423 & 13/1424, Mouza-Nuagaon,<br />
+              Po-Malipada and Ps-Chandka,<br />
+              (Near IIIT, Madhupur and Paikarapur Road)<br />
+              Bhubaneswar-751003
             </p>
             <a 
-              href="https://maps.google.com/?q=KIIT+Road+Patia+Bhubaneswar+Odisha"
+              href="https://maps.google.com/?q=Plot+No.+13/1423+%26+13/1424,+Mouza-Nuagaon,+Po-Malipada+and+Ps-Chandka,+(Near+IIIT,+Madhupur+and+Paikarapur+Road)+Bhubaneswar-751003"
               target="_blank"
               rel="noopener noreferrer"
               className="text-saffron hover:text-turmeric transition-colors text-sm"
