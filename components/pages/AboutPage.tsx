@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Leaf, Clock, Award, ChefHat, Flame } from 'lucide-react';
+import { Heart, Leaf, Clock, Award, ChefHat, Flame, Linkedin, Facebook, Twitter } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
   return (
@@ -90,7 +90,7 @@ const AboutPage: React.FC = () => {
         </div>
 
         {/* Team/Chef Section */}
-        <div className="glass-panel rounded-3xl p-8 md:p-12">
+        <div className="glass-panel rounded-3xl p-8 md:p-12 mb-16">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
               Meet Our <span className="text-turmeric">Culinary Team</span>
@@ -130,6 +130,87 @@ const AboutPage: React.FC = () => {
                 <p className="text-gray-400 text-sm">{chef.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Founder Section */}
+        <div className="glass-panel rounded-3xl p-8 md:p-12">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+              Our <span className="text-saffron">Founder</span>
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="w-64 h-64 rounded-full bg-gradient-to-br from-saffron to-chili p-1">
+                  <div className="w-full h-full rounded-full bg-dark-bg flex items-center justify-center overflow-hidden">
+                    <img 
+                      src="https://media.licdn.com/dms/image/v2/D5603AQH87d3Uk6lO9g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1718951322498?e=1753920000&v=beta&t=8X4QxqJKu9PaQy0xK7nMlLVnJ8zKzKqK7qKqJKuKqKo"
+                      alt="Om Swarup Bindhani"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        target.parentElement!.innerHTML = '<span class="text-6xl font-display font-bold text-saffron">OB</span>';
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-24 h-24 bg-gradient-to-br from-turmeric to-chili rounded-full -z-10 blur-2xl opacity-50" />
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">
+                Om Swarup Bindhani
+              </h3>
+              <p className="text-saffron font-semibold mb-4">Founder & Visionary</p>
+              <p className="text-turmeric text-sm font-medium mb-4">
+                Serial & Social Entrepreneur | Agro-Tourism Innovator | Nation-Builder
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Om Swarup Bindhani is a visionary, purpose-driven entrepreneur dedicated to creating 
+                inclusive, scalable ventures rooted in regional empowerment and sustainable development. 
+                With a decade of experience, he strategically deploys business as a tool for societal 
+                transformation, successfully positioning Odisha as a rising hub for innovation.
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-6">
+                His work spans key sectors including agriculture, wellness, startup incubation, and social 
+                impact. As the Director of Estacha Innovation Incubator and Founder of O-Launchpad, QFarm, 
+                and Best of Odisha, he brings his entrepreneurial spirit to CRAZY TADKA, combining his passion 
+                for authentic cuisine with sustainable business practices.
+              </p>
+              
+              {/* Social Links */}
+              <div className="flex gap-4">
+                <a 
+                  href="https://www.linkedin.com/in/ombindhani" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-saffron/20 hover:border-saffron/50 transition-all duration-300"
+                >
+                  <Linkedin className="w-5 h-5 text-gray-300 hover:text-saffron" />
+                </a>
+                <a 
+                  href="https://www.facebook.com/ombindhani" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-saffron/20 hover:border-saffron/50 transition-all duration-300"
+                >
+                  <Facebook className="w-5 h-5 text-gray-300 hover:text-saffron" />
+                </a>
+                <a 
+                  href="https://x.com/theombindhani" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-saffron/20 hover:border-saffron/50 transition-all duration-300"
+                >
+                  <Twitter className="w-5 h-5 text-gray-300 hover:text-saffron" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
